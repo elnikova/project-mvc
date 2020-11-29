@@ -21,4 +21,9 @@ $ git commit -m "First commit"
 $ git log
 $ git log --pretty=oneline
 
-Новая строка 
+Добавление ветки
+$ git branch dz
+$ git checkout dz -переход в ветку 
+
+$ git checkout -b dz - создаст и перейдет в новую ветку 
+
