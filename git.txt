@@ -13,3 +13,10 @@ $ git add index.php
 
 Добавляет все файлы и папки в проекте в git
 $ git add .
+
+Коммит (Фиксация изменений)
+$ git commit -m "First commit"
+
+Логи(все коммиты)
+$ git log
+$ git log --pretty=oneline
