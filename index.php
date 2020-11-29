@@ -14,7 +14,7 @@ spl_autoload_register(function($className){
     }
     $className = implode('/', $className);
     //print_r($className);
-    //echo $className.'<br>';
+    echo $className.'<br>';
     require_once $className.'.php';
 });
 
@@ -26,9 +26,9 @@ Route::start();
 echo '<hr>';
 echo '<hr>';
 
-$file1 = new FileHandler('textFile/text.txt');
+/*$file1 = new FileHandler('textFile/text.txt');
 
-/*
+
 echo $file1->getPath().'<br>';
 echo $file1->getDir().'<br>';
 echo $file1->getName().'<br>';

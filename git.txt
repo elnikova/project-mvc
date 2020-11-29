@@ -32,3 +32,17 @@ $ git checkout -b dz - создаст и перейдет в новую ветк
 
 Удалить ветку
  git branch -D dz
+
+
+
+
+
+************************************
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/elnikova/project-mvc.git
+git push -u origin main
+
+
