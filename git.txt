@@ -1,0 +1,15 @@
+Глобальные данные 1 раз в самом начале
+$ git config --global user.name "Dariya Elnikova"
+$ git config --global user.email "elnikova.dariya@gmail.com"
+
+инициализация git
+$ git init
+
+Статус
+$ git status
+
+Добавляет файл и папкe в проекте в git
+$ git add index.php
+
+Добавляет все файлы и папки в проекте в git
+$ git add .
