@@ -20,3 +20,5 @@ $ git commit -m "First commit"
 Логи(все коммиты)
 $ git log
 $ git log --pretty=oneline
+
+Новая строка 

@@ -7,17 +7,15 @@ use Classes\FileHandler;
 
 spl_autoload_register(function($className){
     $className = explode('\\', $className);
-    echo lcfirst($className[0]);
-    echo lcfirst($className[1]);
     
-    
-    // for($i=0; $i<=1; $i++){
-    //      lcfirst($className[$i]);
-    // }
+
+    for($i=0; $i<=1; $i++){
+        $className[$i] = lcfirst($className[$i]);
+    }
     $className = implode('/', $className);
     //print_r($className);
-    echo $className.'<br>';
-    //require_once $className.'.php';
+    //echo $className.'<br>';
+    require_once $className.'.php';
 });
 
 
