@@ -11,14 +11,26 @@ class Route{
         self::$page = $_GET['page'] ?? '/';
         $routes = require __DIR__.'/../web.php';
 
-        if(isset($routes[self::$page])){
-            list($nameController, $nameMethod) = explode('@', $routes[self::$page]);
+        $isRouteFound = false;//$routes нет совпадений по url
+        foreach($routes as $pattern => $controllerAndMethod){
+            preg_match('~^'.$pattern.'$~', self::$page, $matches);
+            //var_dump($matches);
+            if(!empty($matches)){
+                $isRouteFound = true;
+                break;
+            }
+        }
+
+
+        if($isRouteFound){
+            list($nameController, $nameMethod) = explode('@', $controllerAndMethod);
             if(file_exists('core/controllers/'.$nameController.'.php')){
                 //require 'core/controllers/'.$nameController.'.php';
                 $pathController = 'Core\\Controllers\\'.$nameController;
                 $controller = new $pathController();
                 if(method_exists($controller, $nameMethod)){
-                    $controller->$nameMethod();
+                    unset($matches[0]);
+                    $controller->$nameMethod(...$matches);
                 }else{
                     echo 'Method not found';
                 }

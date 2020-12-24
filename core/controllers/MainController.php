@@ -2,22 +2,16 @@
 namespace Core\Controllers;
 
 use Core\Views\View;
+use Core\Models\Article;
 
 class MainController extends Controller{
 
     public function index()
     {
         $title = 'Home Page';
-        $articles = [
-            [
-                'name'    =>'Article 1',
-                'content' => 'Text for  Article 1'
-            ],
-            [
-                'name'    =>'Article 2',
-                'content' => 'Text for  Article 2'
-            ]
-        ];
+
+        $articles = Article::findAll();
+        //$this->dump($articles);
         View::render('main/index', compact('title', 'articles'));
     }
     public function contacts()
@@ -25,3 +19,6 @@ class MainController extends Controller{
         View::render('main/contacts');
     }
 }
+
+
+//ActiveRecord
