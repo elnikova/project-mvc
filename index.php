@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/vendor/autoload.php';
 use Core\Libs\Route;
 use Classes\FileHandler;
 
@@ -45,6 +46,7 @@ $file->copy();
 //$file1->delete();
 //$file1->replace('core/');
 */
+
 
 
 
