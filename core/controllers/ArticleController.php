@@ -4,6 +4,7 @@ namespace Core\Controllers;
 use Core\Views\View;
 use Core\Models\Article;
 use Core\Models\User;
+use Core\Libs\Exceptions\NotFoundException;
 
 class ArticleController extends Controller{
 
@@ -11,8 +12,7 @@ class ArticleController extends Controller{
     {
        $article = Article::getById($id);
        if(!$article){
-            View::render('errors/404', [], 404);
-            return;
+        throw new NotFoundException();
        }
 
        //$author = User::getById($article->user_id);
@@ -24,8 +24,7 @@ class ArticleController extends Controller{
     {
         $article = Article::getById($id);
         if(!$article){
-            View::render('errors/404', [], 404);
-            return;
+            throw new NotFoundException();
         }
         $article->name = 'New article';
         $article->text = 'Tex for New article';
