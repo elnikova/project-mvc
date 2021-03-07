@@ -70,11 +70,10 @@ class ProductController extends Controller{
         } 
         $this->importCategories($categoriesList);
         $result = $this->importProduct($names, $description, $price, $sku, $categories);
-        // $_SESSION['resultUpdate'] = "<script>alert('Добавлено $result[0] товаров, обновлено $result[1] товаров.')</script";
-        // echo $_SESSION['resultUpdate'];
+        // $_SESSION['addProducts'] = $result[0];
+        // $_SESSION['updaitProducts'] =  $result[1];
+        //print_r (compact('result'));
         $this->redirect('/');
-        //View::render('main/index', compact($result));
-        //echo "<script>alert('Добавлено $result[0] товаров, обновлено $result[1] товаров.')</script";
     } 
 
     public function importCategories($categoriesList)

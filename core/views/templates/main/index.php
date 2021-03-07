@@ -6,11 +6,10 @@
 <a href="/import" class="btn btn-primary">Import from Excel</a>
 
 
-<?php 
-if($_SESSION['resultUpdate']): ?>
-    <div><?php echo $_SESSION['resultUpdate'] ?></div>
-<?php endif ?> 
 
+<?php
+    echo($result[0]); 
+?>
 
 <?php     
     foreach($articles as $article): ?>
