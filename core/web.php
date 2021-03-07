@@ -11,4 +11,6 @@ return [
     'article/add-form' => 'ArticleController@addForm',
     'pdf-articles' => 'ArticleController@pdf',
     'excel-articles' => 'ArticleController@excel',
+    'import' => 'ProductController@import',
+    'import-form' => 'ProductController@importFile',
 ];

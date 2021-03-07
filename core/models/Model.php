@@ -86,5 +86,5 @@ abstract class Model{
 
 
     abstract protected static function getTableName();
-    
+  
 }
